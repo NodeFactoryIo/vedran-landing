@@ -1,0 +1,26 @@
+<section class="section is-medium  has-background-image" data-background="https://source.unsplash.com/g30P1zcOzXo/1600x900" data-color="#4FC1EA" data-color-opacity=".6">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2 light-text is-spaced pb-40">Setup instructions</h2>
+        </div>
+    </div>
+    <div class="box">
+        <h3 class="subtitle is-5">Load balancer</h3>
+        <ul>
+            <li>Download latest release: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran-daemon/releases" >github.com/NodeFactoryIo/vedran/releases</a></li>
+            <li>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network/docs/en/learn-account-generation</a></li>
+            <li>./vedran start --auth-secret=&#60;generate random secret&#62; --private-key=&#60;private seed from generated account&#62;&#60;/private&#62;</li>
+            <li>Use --help for additional configuration and flags</li>
+        </ul>
+    </div>
+    <div class="box">
+        <h3 class="subtitle is-5">Node</h3>
+        <ul>
+            <li>Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
+            <li>
+                ./vedran-daemon --id=&#60;some secret id for your node&#62; --lb=&#60;load balancer url&#62; </br>
+                --payout-address=&#60;polkadot account address&#62;
+            </li>
+        </ul>
+    </div>
+</section>

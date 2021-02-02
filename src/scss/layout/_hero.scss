@@ -12,6 +12,9 @@ Hero styles
     }
 
     .title {
+        font-family: 'Baloo Da 2', cursive !important;
+        font-size: 5rem;
+        color: $primary;
         &.is-bold {
             font-weight: 700;
         }
