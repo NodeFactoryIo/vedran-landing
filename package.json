@@ -1,7 +1,7 @@
 {
-  "name": "fresh",
-  "version": "4.0.1",
-  "description": "Fresh - Bulma + Alpine JS landing page",
+  "name": "Vedran-landing",
+  "version": "0.1.0",
+  "description": "Vedran landing page",
   "main": "gulpfile.js",
   "dependencies": {
     "@ryangjchandler/spruce": "^2.4.0",
@@ -56,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/"
+    "url": "https://github.com/NodeFactoryIo/vedran-landing"
   },
   "keywords": [
     "gulp",
@@ -65,7 +65,7 @@
     "bulmacss",
     "sass"
   ],
-  "author": "Css Ninja",
+  "author": "NodeFactoryIo",
   "license": "Commercial",
   "bugs": {
     "url": "https://github.com/"

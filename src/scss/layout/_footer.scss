@@ -11,9 +11,13 @@ footer.footer-dark {
     }
 
     .footer-logo {
-        img {
-            height: 40px;
-        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Baloo Da 2', cursive !important;
+        font-size: 1.5rem;
+        font-size: 2rem;
+        color: $primary;
     }
 
     .footer-column {
@@ -46,7 +50,6 @@ footer.footer-dark {
             .icon {
                 color: $secondary;
                 transition: all 0.5s;
-
                 &:hover {
                     color: $smoke-white;
                 }

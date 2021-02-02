@@ -21,6 +21,7 @@ Navbar
     .navbar-burger {
         width: 4rem;
         height: 4rem;
+        display: flex;
     }
 
     //Brand
@@ -47,7 +48,15 @@ Navbar
     //Navbar items
     .navbar-item {
         color: $muted-grey;
-
+        font-family: 'Baloo Da 2', cursive !important;
+        font-size: 1.5rem;
+        h3{
+            color: $primary;
+            padding-left: 0.5rem;
+        }
+        img{
+            margin-left: -2rem;
+        }
         &.is-secondary {
             &:hover {
                 color: $secondary !important;
