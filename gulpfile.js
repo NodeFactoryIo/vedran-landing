@@ -1,4 +1,4 @@
-const { src, dest, composer, watch, series, parallel } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const del = require('del');
 const options = require("./config");
 const browserSync = require('browser-sync').create();
