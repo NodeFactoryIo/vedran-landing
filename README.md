@@ -4,7 +4,7 @@
 
 To run the app in the development mode you can use:
 
-### `yarn start`
+### `yarn dev`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 

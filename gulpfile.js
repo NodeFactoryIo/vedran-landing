@@ -1,16 +1,12 @@
-const { src, dest, task, watch, series, parallel } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const del = require('del');
 const options = require("./config");
 const browserSync = require('browser-sync').create();
-
 const sass = require('gulp-sass');
 const bourbon = require('node-bourbon').includePaths;
-const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const cleanCSS = require('gulp-clean-css');
-const purgecss = require('gulp-purgecss');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const panini = require('panini');
@@ -71,6 +67,10 @@ function compileSCSS() {
       includePaths: bourbon
     }).on('error', sass.logError))
     .pipe(autoprefixer('last 2 versions'))
+    .pipe(cleanCSS({debug: true}, (details) => {
+      console.log(`${details.name}: ${details.stats.originalSize}`);
+      console.log(`${details.name}: ${details.stats.minifiedSize}`);
+    }))
     .pipe(dest('dist/css'))
     .pipe(browserSync.stream());
 }
@@ -127,9 +127,23 @@ function devHTML() {
   return src(`${options.paths.src.base}/**/*.html`).pipe(dest(options.paths.dist.base));
 }
 
-//Optimize images
 function devImages() {
   return src(`${options.paths.src.img}/**/*`).pipe(dest(options.paths.dist.img));
+}
+
+//Optimize images
+function prodImages() {
+  return src(`${options.paths.src.img}/**/*`).pipe(imagemin([
+    imagemin.gifsicle({interlaced: true}),
+    imagemin.mozjpeg({quality: 75, progressive: true}),
+    imagemin.optipng({optimizationLevel: 5}),
+    imagemin.svgo({
+        plugins: [
+            {removeViewBox: false},
+            {cleanupIDs: false}
+        ]
+    })
+  ])).pipe(dest(options.paths.dist.img));
 }
 
 // Let's write our task in a function to keep things clean
@@ -169,7 +183,7 @@ function watchFiles() {
   console.log("\n\t" + logSymbols.info, "Watching for Changes..\n");
 }
 
-function devClean() {
+function clean() {
   console.log("\n\t" + logSymbols.info, "Cleaning dist folder for fresh start.\n");
   return del([options.paths.dist.base]);
 }
@@ -178,9 +192,15 @@ function devClean() {
 exports.setup = series(setupBulma);
 
 exports.default = series(
-  devClean, // Clean Dist Folder
+  clean, // Clean Dist Folder
   resetPages,
   parallel(concatCssPlugins, compileSCSS, javascriptBuild, devImages, compileHTML),
   livePreview, // Live Preview Build
   watchFiles // Watch for Live Changes
+);
+
+exports.prod = series(
+  clean, // Clean Dist Folder
+  resetPages,
+  parallel(concatCssPlugins, copyData, compileSCSS, javascriptBuild, prodImages, compileHTML)
 );
