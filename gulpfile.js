@@ -202,6 +202,5 @@ exports.default = series(
 exports.prod = series(
   clean, // Clean Dist Folder
   resetPages,
-  parallel(concatCssPlugins, copyData, compileSCSS, javascriptBuild, prodImages, compileHTML),
-  livePreview
+  parallel(concatCssPlugins, copyData, compileSCSS, javascriptBuild, prodImages, compileHTML)
 );
