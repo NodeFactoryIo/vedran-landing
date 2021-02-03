@@ -12,3 +12,6 @@ The page will reload if you make edits.<br />
 
 
 ## License
+
+This project is licensed under Apache 2.0:
+- Apache License, Version 2.0, ([LICENSE-APACHE](http://www.apache.org/licenses/LICENSE-2.0))
