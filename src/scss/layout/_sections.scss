@@ -50,6 +50,13 @@ Section Styles
         width: 100%;
         z-index: 0;
     }
+    &.setup{
+        .box{
+            li{
+                padding: 0 0 0.5rem 0.5rem;
+            }
+        }
+    }
 }
 
 //Titles
