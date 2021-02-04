@@ -4,6 +4,7 @@ import './store/store';
 import 'alpinejs';
 import { env } from './libs/utils/constants';
 import { initPageLoader } from './libs/components/pageloader';
+import { openTab } from "./libs/components/setupInstrucions";
 import { switchDemoImages, insertBgImages, initModals } from './libs/utils/utils';
 import { initNavbar } from './libs/components/navbar';
 import { initBackToTop } from './libs/components/backtotop';
@@ -28,6 +29,9 @@ document.onreadystatechange = function () {
         
         // Add modal windows
         const modals = initModals();
+
+        //Handle Setup instructions tabs
+        const instructionTabs = openTab();
     }
 }
 
