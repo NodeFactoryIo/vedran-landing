@@ -1,0 +1,22 @@
+.terms{
+    background-color: $primary-background;
+    padding: 3rem 2rem;
+    h1{
+        font-size: 2.5rem;
+        padding-bottom: 2rem;
+        font-weight: 600;
+        color: $frost;
+    }
+    h2{
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: $frost;
+        padding: 1rem 0;
+    }
+    p{
+        padding: 0.5rem 0;
+
+        color: $dark-grey;
+
+    }
+}
