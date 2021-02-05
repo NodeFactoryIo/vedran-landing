@@ -68,9 +68,13 @@ Section Styles
                 padding: 0 0 0.5rem 0.5rem;
             }
         }
+        .codeContainer{
+            display: flex;
+            align-items: center;
+        }
         .code{
             padding: 0.5rem !important;
-            margin: 0.5rem;
+            margin: 0.5rem 0.5rem 0.5rem 0;
             background-color: $dark-grey;
             color: white;
             font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
@@ -78,6 +82,11 @@ Section Styles
         }
         .hightlight{
             color: $secondary;
+        }
+        .step{
+            font-weight: 600;
+            padding-right: 0.5rem;
+            color: $medium-grey;
         }
     }
 }
