@@ -7,6 +7,7 @@ import { initPageLoader } from './libs/components/pageloader';
 import { switchDemoImages, insertBgImages, initModals } from './libs/utils/utils';
 import { initNavbar } from './libs/components/navbar';
 import { initBackToTop } from './libs/components/backtotop';
+import { getTableData } from './libs/components/fetch';
 const feather = require('feather-icons');
 
 window.initNavbar = initNavbar;
@@ -28,6 +29,9 @@ document.onreadystatechange = function () {
         
         // Add modal windows
         const modals = initModals();
+
+        //Fetch table data
+        const daata = getTableData();
     }
 }
 
