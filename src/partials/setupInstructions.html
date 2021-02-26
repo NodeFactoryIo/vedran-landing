@@ -4,23 +4,112 @@
             <h2 class="title is-2 light-text is-spaced pb-40">Setup instructions</h2>
         </div>
     </div>
-    <div class="box">
-        <h3 class="subtitle is-5">Load balancer</h3>
-        <ul>
-            <li>Download latest release: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran-daemon/releases" >github.com/NodeFactoryIo/vedran/releases</a></li>
-            <li>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network/docs/en/learn-account-generation</a></li>
-            <li>./vedran start --auth-secret=&#60;generate random secret&#62; --private-key=&#60;private seed from generated account&#62;&#60;/private&#62;</li>
-            <li>Use --help for additional configuration and flags</li>
-        </ul>
+    <nav class="tabs is-centered is-medium is-boxed">
+        <div class="container">
+            <ul>
+                <li class="tab is-active" id="windowsTab"><a>Windows</a></li>
+                <li class="tab" id="linuxTab"><a>Linux</a></li>
+                <li class="tab" id="macTab"><a>Mac</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container section">
+        <div id="windowsContainer" class="content-tab is-active">
+            <div class="box">
+                <h1>Windows</h1>
+                <h3 class="subtitle is-5">Load balancer</h3>
+                <ul>    
+                    <li><span class="step">1.</span> Download latest release from: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran-daemon/releases" >Github</a></li>
+                    <li><span class="step">2.</span>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network/docs/en/learn-account-generation</a></li>
+                    <li class="codeContainer">
+                        <span class="step">3.</span>
+                        <div class="code">
+                            ./vedran start --auth-secret=<span class="hightlight">&#60;generate random secret&#62;</span>   --private-key=<span class="hightlight">&#60;private seed from generated account&#62;</span>
+                        </div> 
+                    </li>
+                    <li><span class="step">4.</span> Use <span class="code">--help</span> for additional configuration and flags</li>
+                </ul>
+                <h3 class="subtitle is-5">Node</h3>
+                <ul>
+                    <li><span class="step">1.</span> Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
+                    <li class="codeContainer">
+                        <span class="step">2.</span>
+                        <div class="code">
+                                ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your node&#62;</span> --lb=<span class="hightlight">&#60;load balancer url&#62;</span>
+                                --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="linuxContainer" class="content-tab" style="display: none">
+            <div class="box">
+                <h1>Linux</h1>
+                <h3 class="subtitle is-5">Load balancer</h3>
+                <ul>    
+                    <li><span class="step">1.</span> Download latest release from: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran-daemon/releases" >Github</a></li>
+                    <li><span class="step">2.</span>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network/docs/en/learn-account-generation</a></li>
+                    <li class="codeContainer">
+                        <span class="step">3.</span>
+                        <div class="code">
+                            ./vedran start --auth-secret=<span class="hightlight">&#60;generate random secret&#62;</span>   --private-key=<span class="hightlight">&#60;private seed from generated account&#62;</span>
+                        </div> 
+                    </li>
+                    <li><span class="step">4.</span> Use <span class="code">--help</span> for additional configuration and flags</li>
+                </ul>
+                <h3 class="subtitle is-5">Node</h3>
+                <ul>
+                    <li><span class="step">1.</span> Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
+                    <li class="codeContainer">
+                        <span class="step">2.</span>
+                        <div class="code">
+                                ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your node&#62;</span> --lb=<span class="hightlight">&#60;load balancer url&#62;</span>
+                                --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="macContainer" class="content-tab" style="display: none">
+            <div class="box">
+                <h1>Mac</h1>
+                <h3 class="subtitle is-5">Load balancer</h3>
+                <ul>    
+                    <li><span class="step">1.</span> Download latest release from: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran-daemon/releases" >Github</a></li>
+                    <li><span class="step">2.</span>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network/docs/en/learn-account-generation</a></li>
+                    <li class="codeContainer">
+                        <span class="step">3.</span>
+                        <div class="code">
+                            ./vedran start --auth-secret=<span class="hightlight">&#60;generate random secret&#62;</span>   --private-key=<span class="hightlight">&#60;private seed from generated account&#62;</span>
+                        </div> 
+                    </li>
+                    <li><span class="step">4.</span> Use <span class="code">--help</span> for additional configuration and flags</li>
+                </ul>
+                <h3 class="subtitle is-5">Node</h3>
+                <ul>
+                    <li><span class="step">1.</span> Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
+                    <li class="codeContainer">
+                        <span class="step">2.</span>
+                        <div class="code">
+                                ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your node&#62;</span> --lb=<span class="hightlight">&#60;load balancer url&#62;</span>
+                                --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="box">
-        <h3 class="subtitle is-5">Node</h3>
-        <ul>
-            <li>Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
-            <li>
-                ./vedran-daemon --id=&#60;some secret id for your node&#62; --lb=&#60;load balancer url&#62; </br>
-                --payout-address=&#60;polkadot account address&#62;
-            </li>
-        </ul>
+    <div class="container">
+
+        <!-- <div class="box">
+            <h3 class="subtitle is-5">Node</h3>
+            <ul>
+                <li>Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
+                <li>
+                    ./vedran-daemon --id=&#60;some secret id for your node&#62; --lb=&#60;load balancer url&#62; </br>
+                    --payout-address=&#60;polkadot account address&#62;
+                </li>
+            </ul>
+        </div> -->
     </div>
 </section>

@@ -51,10 +51,42 @@ Section Styles
         z-index: 0;
     }
     &.setup{
+        h3{
+            margin: 1.5rem 0;
+        }
+        nav{
+            margin: 0;
+            ul{
+                border: none;
+            }
+        }
+        .section {
+            padding: 0;
+        }
         .box{
             li{
                 padding: 0 0 0.5rem 0.5rem;
             }
+        }
+        .codeContainer{
+            display: flex;
+            align-items: center;
+        }
+        .code{
+            padding: 0.5rem !important;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            background-color: $dark-grey;
+            color: white;
+            font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+            border-radius: 0.5rem;
+        }
+        .hightlight{
+            color: $secondary;
+        }
+        .step{
+            font-weight: 600;
+            padding-right: 0.5rem;
+            color: $medium-grey;
         }
     }
 }

@@ -233,11 +233,14 @@ Responsive Styles
         }
     }
 }
-@media only screen and (min-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 1024px) {
     .navbar {
         .navbar-brand {
             .navbar-burger {
-               display: none;
+               display: none !important;
+            }
+            .navbar-menu{
+                display: flex;
             }
         }
     }

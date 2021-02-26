@@ -6,7 +6,7 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
-const ul = document.getElementById('metricsData');
+const tr1 = document.getElementById('loadBalancer1');
 
 export function getTableData() {
     const response = fetch("https://westend.vedran.nodefactory.io/metrics")
@@ -15,17 +15,35 @@ export function getTableData() {
         const activeNodes =  Number(/vedran_number_of_active_nodes\s*(\d*)\n/g.exec(text)[1]);
         const penalizedNodes =  Number(/vedran_number_of_penalized_nodes\s*(\d*)\n/g.exec(text)[1]);
         const totalNodes = activeNodes + penalizedNodes;
-        let li = createNode('li');
-        let activeNodesSpan = createNode('span');
-        let penalizedNodesSpan = createNode('span');
-        let totalNodesSpan = createNode('span');
-        activeNodesSpan.innerHTML = `Active nodes ${activeNodes}`;
-        penalizedNodesSpan.innerHTML = `Penalized nodes ${penalizedNodes}`;
-        totalNodesSpan.innerHTML = `Total nodes ${totalNodes}`;
-        append(li, activeNodesSpan);
-        append(li, penalizedNodesSpan);
-        append(li, totalNodesSpan);
-        append(ul, li);
-        console.log(activeNodes, penalizedNodes, totalNodes)
+        const loadBalancerName = "N/A"
+        const loadBalancerUrl = "https://westend.vedran.nodefactory.io/metrics"
+
+        //create <a>
+        let loadBalancerUrlA = createNode('a');
+        let loadBalancerUrlAText = document.createTextNode("link");
+        loadBalancerUrlA.setAttribute('href', loadBalancerUrl);
+        loadBalancerUrlA.setAttribute('target', "_blank");
+        loadBalancerUrlA.appendChild(loadBalancerUrlAText);
+
+        //append <a> to <td>
+        let loadBalancerUrlTd = createNode('td');
+        append(loadBalancerUrlTd, loadBalancerUrlA)
+
+        //create <td>s
+        let loadBalancerNameTd = createNode('td');
+        loadBalancerNameTd.innerHTML = loadBalancerName;
+        let activeNodeTd = createNode('td');
+        activeNodeTd.innerHTML = activeNodes;
+        let penalizedNodesTd = createNode('td');
+        penalizedNodesTd.innerHTML = penalizedNodes;
+        let totalNodesTd = createNode('td');
+        totalNodesTd.innerHTML = totalNodes;
+
+        //append <td>s to <tr>
+        append(tr1, loadBalancerNameTd);
+        append(tr1, loadBalancerUrlTd);
+        append(tr1, activeNodeTd);
+        append(tr1, penalizedNodesTd);
+        append(tr1, totalNodesTd);
     })
 }
