@@ -1,0 +1,10 @@
+.tabs {
+    .tab a {
+        color: white;
+    }
+    .tab:not(.is-active) {
+        a:hover {
+            color: $dark-grey;
+        }
+    }
+}
