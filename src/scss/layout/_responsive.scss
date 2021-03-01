@@ -245,3 +245,8 @@ Responsive Styles
         }
     }
 }
+@media only screen and (max-width: 840px) {
+    #loadBalancerWrapper{
+        overflow-x: scroll;
+    }
+}
