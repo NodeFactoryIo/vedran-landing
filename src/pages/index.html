@@ -107,19 +107,20 @@ title: Landing Page
                 <h2 class="title is-2">Load balancers</h2>
                 <div class="divider is-centered"></div>
             </div>
-            <div class="content-wrapper">
+            <div class="content-wrapper" id="loadBalancerWrapper">
                 <table class="table is-bordered is-fullwidth is-striped">
                         <thead>
                             <tr>
                                 <th>Load balancer name</th>
+                                <th>Network</th>
                                 <th>Public url</th> 
                                 <th>Active nodes</th>
                                 <th>Penalized nodes</th>
                                 <th>Total nodes</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr id="loadBalancer1"></tr>
+                        <tbody id="loadBalancerTableBody">
+                            <!-- <tr id="loadBalancer1"></tr> -->
                         </tbody>
                     </table>
             </div>

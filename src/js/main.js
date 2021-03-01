@@ -32,7 +32,7 @@ document.onreadystatechange = function () {
         const modals = initModals();
 
         //Fetch table data
-        const daata = getTableData();
+        const data = getTableData();
         
         //Handle Setup instructions tabs
         const instructionTabs = openTab();
