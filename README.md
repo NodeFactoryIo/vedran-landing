@@ -1,5 +1,11 @@
 # Vedran landing page
 
+## Listing your own Vedran load balancer
+
+- fork repo
+- edit <https://github.com/NodeFactoryIo/vedran-landing/blob/master/src/js/libs/constants/loadBalancers.js>
+- open PR on source (this) repo
+
 ## Development
 
 To run the app in the development mode you can use:
