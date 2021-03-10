@@ -1,4 +1,9 @@
-function handleTabClick(event, tabContainerToDisplay) {
+function handleTabClick(event, id) {
+    event.preventDefault(); 
+    window.location.hash = id;
+}
+
+function switchTab(newContainerId) {
     const contentTabs = document.getElementsByClassName("content-tab");
     let i;
     for (i = 0; i < contentTabs.length; i++) {
@@ -8,12 +13,17 @@ function handleTabClick(event, tabContainerToDisplay) {
     for (i = 0; i < tabs.length; i++) {
         tabs[i].className = tabs[i].className.replace(" is-active", "");
     }
-    document.getElementById(tabContainerToDisplay).style.display = "block";
-    event.currentTarget.className += " is-active";
+    document.getElementById(newContainerId).style.display = "block";
+    document.getElementById(newContainerId.replace("Container", "Tab")).className += " is-active";
 }
 
 export function openTab() {
     document.getElementById('windowsTab').onclick = function(event) {handleTabClick(event, "windowsContainer")};
     document.getElementById('linuxTab').onclick = function(event) {handleTabClick(event, "linuxContainer")};
     document.getElementById('macTab').onclick = function(event) {handleTabClick(event, "macContainer")};
+
+    window.onhashchange = function() {
+        var adressBarHash = window.location.hash;
+        switchTab(adressBarHash.replace("#", ""))
+    }
   }
