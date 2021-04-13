@@ -24,6 +24,9 @@ export function openTab() {
 
     window.onhashchange = function() {
         var adressBarHash = window.location.hash;
+        if(!["#windowsContainer", "#linuxContainer", "#macContainer"].includes(adressBarHash)) {
+            adressBarHash = "#windowsContainer";
+        }
         switchTab(adressBarHash.replace("#", ""))
     }
   }

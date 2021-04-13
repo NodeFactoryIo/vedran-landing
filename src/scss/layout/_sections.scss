@@ -23,6 +23,10 @@ Section Styles
         background-color: $secondary;
     }
 
+    &.section-primary {
+        background-color: $primary;
+    }
+
     &.section-half {
         height: 75vh !important;
     }
@@ -87,6 +91,10 @@ Section Styles
             font-weight: 600;
             padding-right: 0.5rem;
             color: $medium-grey;
+        }
+
+        .tabs li.is-active a {
+            color: $primary;
         }
     }
 }

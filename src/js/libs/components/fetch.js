@@ -27,7 +27,7 @@ export function getTableData() {
             let loadBalancerNetworkTd = createNode('td');
             loadBalancerNetworkTd.innerHTML = loadBalancer.network;
             let loadBalancerUrlTd = createNode('td');
-            loadBalancerUrlTd.innerHTML = loadBalancer.url;
+            loadBalancerUrlTd.innerHTML = loadBalancer.urls.join("<br/>");
 
             let activeNodeTd = createNode('td');
             activeNodeTd.innerHTML = activeNodes;

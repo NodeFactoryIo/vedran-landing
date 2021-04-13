@@ -2,7 +2,10 @@ export const loadBalancers = [
   {
     name: 'NodeFactory',
     network: 'Westend',
-    url: 'wss://westend.vedran.nodefactory.io/ws',
+    urls: [
+      'wss://westend.vedran.nodefactory.io/ws',
+      'https://westend.vedran.nodefactory.io/'
+    ],
     metricsUrl: 'https://westend.vedran.nodefactory.io/metrics'
   }
 ]
