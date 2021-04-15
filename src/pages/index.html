@@ -17,7 +17,7 @@ title: Landing Page
                         Vedran
                     </h1>
                     <h2 class="subtitle is-5 is-muted">
-                        Auto-funded public P2P infrastructure </br> 
+                        Auto-funded public P2P infrastructure </br>
                         intended for Substrate based chains.
                     </h2>
                 </div>
@@ -32,7 +32,7 @@ title: Landing Page
     </div>
 </section>
 
-<section id="features" class="section section-feature-grey is-medium">
+<section id="features" class="section section-feature-grey pt-100">
     <div class="container">
         <div class="title-wrapper has-text-centered">
             <h2 class="title is-2">Features</h2>
@@ -76,7 +76,8 @@ title: Landing Page
                             <img src="/img/icons/blockchain.svg">
                         </div>
                         <div class="card-text">
-                            <p>Supports all substrate based chains but it can be modified to support other blockchains</p>
+                            <p>Supports all substrate based chains but it can be modified to support other blockchains
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -85,12 +86,14 @@ title: Landing Page
     </div>
 </section>
 
-<section id="about" class="section section-feature-grey is-medium">
+<section id="about" class="section section-feature-grey">
     <div class="container">
         <div class="columns is-vcentered app-side">
             <div class="column is-3 is-offset-1">
                 <h3 class="title is-3 is-spaced is-title-reveal">How it works</h3>
-                <p class="subtitle is-5 is-muted">Vedran creates a tunnel between load balancer and regular Polkadot nodes which allows nodes to serve requests from home networks while getting paid based on how useful they are.</p>
+                <p class="subtitle is-5 is-muted">Vedran creates a tunnel between load balancer and regular Polkadot
+                    nodes which allows nodes to serve requests from home networks while getting paid based on how useful
+                    they are.</p>
             </div>
             <div class="column is-8">
                 <div class="has-text-centered">
@@ -101,29 +104,38 @@ title: Landing Page
     </div>
 </section>
 
-<section id="table" class="section section-light-grey is-medium">
+<section id="load-balancers" class="section section-light-grey is-medium">
     <div class="container">
-            <div class="title-wrapper has-text-centered">
-                <h2 class="title is-2">Load balancers</h2>
-                <div class="divider is-centered"></div>
-            </div>
-            <div class="content-wrapper" id="loadBalancerWrapper">
-                <table class="table is-bordered is-fullwidth is-striped">
-                        <thead>
-                            <tr>
-                                <th>Load balancer name</th>
-                                <th>Network</th>
-                                <th>Public url</th> 
-                                <th>Active nodes</th>
-                                <th>Penalized nodes</th>
-                                <th>Total nodes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="loadBalancerTableBody">
-                            <!-- <tr id="loadBalancer1"></tr> -->
-                        </tbody>
-                    </table>
-            </div>
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2">Load balancers</h2>
+            <div class="divider is-centered"></div>
+
+            <p class="pt-20">
+                List of publicly available Vedran load balancers.
+                If you are hosting Vedran load balancer and want to be on this list,<br/>
+                <a target="_blank"
+                    href="https://github.com/nodefactoryio/vedran-landing#listing-your-own-vedran-load-balancer">
+                    see the editing instructions
+                </a>
+            </p>
+        </div>
+        <div class="content-wrapper" id="loadBalancerWrapper">
+            <table class="table is-bordered is-fullwidth is-striped">
+                <thead>
+                    <tr>
+                        <th>Load balancer name</th>
+                        <th>Network</th>
+                        <th>Public url</th>
+                        <th>Active nodes</th>
+                        <th>Penalized nodes</th>
+                        <th>Total nodes</th>
+                    </tr>
+                </thead>
+                <tbody id="loadBalancerTableBody">
+                    <!-- <tr id="loadBalancer1"></tr> -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
 

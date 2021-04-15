@@ -1,7 +1,14 @@
-<section id="setupInstructions" class="section setup is-medium  has-background-image" data-background="/img/illustrations/background-sky.jpg" data-color="#4FC1EA" data-color-opacity=".6">
+<section id="setupInstructions" class="section setup is-medium  section-primary" data-color="#4FC1EA"
+    data-color-opacity=".6">
     <div class="container">
         <div class="title-wrapper has-text-centered">
-            <h2 class="title is-2 light-text is-spaced pb-40">Setup instructions</h2>
+            <h2 class="title is-2 light-text is-spaced">Setup instructions</h2>
+            <div class="divider is-centered"></div>
+
+            <p class="light-text pb-20 pt-20">
+                Help us decentralize infrastructure by either hosting public load balancer
+                or joining the existing one as a node operator.
+            </p>
         </div>
     </div>
     <nav class="tabs is-centered is-medium is-boxed">
@@ -16,100 +23,196 @@
     <div class="container section">
         <div id="windowsContainer" class="content-tab is-active">
             <div class="box">
-                <h1>Windows</h1>
-                <h3 class="subtitle is-5">Vedran Load Balancer</h3>
-                <ul>    
-                    <li><span class="step">1.</span> Download latest release from: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran/releases" >Github</a></li>
-                    <li><span class="step">2.</span>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network</a></li>
-                    <li class="codeContainer">
-                        <span class="step">3.</span>
-                        <div class="code">
-                            ./vedran start --auth-secret=<span class="hightlight">&#60;generate random secret&#62;</span>   --private-key=<span class="hightlight">&#60;private seed from generated account&#62;</span>
-                        </div> 
-                    </li>
-                    <li><span class="step">4.</span> Use <span class="code">--help</span> for additional configuration and flags</li>
-                </ul>
-                <h3 class="subtitle is-5">Vedran Daemon</h3>
-                <ul>
-                    <li><span class="step">1.</span> Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">Github</a></li>
-                    <li class="codeContainer">
-                        <span class="step">2.</span>
-                        <div class="code">
-                                ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your node&#62;</span> --lb=<span class="hightlight">&#60;load balancer url&#62;</span>
-                                --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                <div class="columns  pb-20">
+                    <div class="tile column is-half is-vertical">
+                        <h3 class="subtitle is-4">Vedran Load Balancer</h3>
+                        <div class="pb-20" style="margin-left: 0.5rem;">
+                            <span class="box is-size-6" style="width: 70%;">
+                                Vedran load balancer is providing public endpoint for end users,
+                                distributing request amongst available nodes and doing recurring
+                                payments to node operators based on various metrics and number of requests served.<br/><br/>
+                                Note: you will have to secure funding yourself either trough chain treasuries or other sources of funding
+                            </span>
                         </div>
-                    </li>
-                </ul>
+                        <ul>
+                            <li><span class="step">1.</span>Create polkadot account - <a target="_blank"
+                                    href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network</a>
+                            </li>
+                            <li><span class="step">2.</span>Download latest release from: <a target="_blank"
+                                    href="https://github.com/NodeFactoryIo/vedran/releases">Github</a></li>
+                            <li><span class="step">3.</span>Unzip downloaded archive with your favorite tool</li>
+                            <li class="codeContainer">
+                                <span class="step">4.</span>
+                                <div class="code">
+                                    ./vedran start --auth-secret=<span class="hightlight">&#60;random secret&#62;</span>
+                                    --private-key=<span class="hightlight">&#60;private seed from step 1.&#62;</span>
+                                </div>
+                            </li>
+                            <li><span class="step">4.</span> Use <span class="code">--help</span> for additional
+                                configuration and flags</li>
+                        </ul>
+                    </div>
+
+                    <div class="tile column is-half is-vertical">
+                        <h3 class="subtitle is-4">Vedran Daemon</h3>
+                        <div class="pb-20" style="margin-left: 0.5rem;">
+                            <span class="box is-size-6" style="width: 70%;">
+                                Vedran daemon is small daemon app that is running alongside your Substrate based node to join
+                                some of the <a href="#load-balancers">existing load balancer</a> pools and receive payments for operating node.
+                            </span>
+                        </div>
+                        <ul>
+                            <li><span class="step">1.</span> Run Substrate based node: <a
+                                    href="https://wiki.polkadot.network/docs/en/maintain-sync">wiki.polkadot.network</a>
+                            </li>
+                            <li><span class="step">2.</span> Download latest release: <a
+                                    href="https://github.com/NodeFactoryIo/vedran-daemon/releases">Github</a></li>
+                            <li><span class="step">3.</span>Unzip downloaded archive with your favorite tool</li>
+                            <li class="codeContainer">
+                                <span class="step">4.</span>
+                                <div class="code">
+                                    ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your
+                                        node&#62;</span> --lb=<span class="hightlight">&#60;load balancer
+                                        url&#62;</span>
+                                    --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="linuxContainer" class="content-tab" style="display: none">
             <div class="box">
-                <h1>Linux</h1>
-                <h3 class="subtitle is-5">Vedran  Load Balancer</h3>
-                <ul>    
-                    <li><span class="step">1.</span> Download latest release from: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran/releases" >Github</a></li>
-                    <li><span class="step">2.</span>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network</a></li>
-                    <li class="codeContainer">
-                        <span class="step">3.</span>
-                        <div class="code">
-                            ./vedran start --auth-secret=<span class="hightlight">&#60;generate random secret&#62;</span>   --private-key=<span class="hightlight">&#60;private seed from generated account&#62;</span>
-                        </div> 
-                    </li>
-                    <li><span class="step">4.</span> Use <span class="code">--help</span> for additional configuration and flags</li>
-                </ul>
-                <h3 class="subtitle is-5">Vedran Daemon</h3>
-                <ul>
-                    <li><span class="step">1.</span> Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">Github</a></li>
-                    <li class="codeContainer">
-                        <span class="step">2.</span>
-                        <div class="code">
-                                ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your node&#62;</span> --lb=<span class="hightlight">&#60;load balancer url&#62;</span>
-                                --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                <div class="columns  pb-20">
+                    <div class="tile column is-half is-vertical">
+                        <h3 class="subtitle is-4">Vedran Load Balancer</h3>
+                        <div class="pb-20" style="margin-left: 0.5rem;">
+                            <span class="box is-size-6" style="width: 70%;">
+                                Vedran load balancer is providing public endpoint for end users,
+                                distributing request amongst available nodes and doing recurring
+                                payments to node operators based on various metrics and number of requests served.<br/><br/>
+                                Note: you will have to secure funding yourself either trough chain treasuries or other sources of funding
+                            </span>
                         </div>
-                    </li>
-                </ul>
+                        <ul>
+                            <li><span class="step">1.</span>Create polkadot account - <a target="_blank"
+                                    href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network</a>
+                            </li>
+                            <li><span class="step">2.</span>Download latest release from: <a target="_blank"
+                                    href="https://github.com/NodeFactoryIo/vedran/releases">Github</a></li>
+                            <li class="codeContainer">
+                                <span class="step">3.</span>
+                                <div class="code">
+                                    unzip vedran-linux-*.zip
+                                </div>
+                            </li>
+                            <li class="codeContainer">
+                                <span class="step">5.</span>
+                                <div class="code">
+                                    ./vedran start --auth-secret=<span class="hightlight">&#60;random secret&#62;</span>
+                                    --private-key=<span class="hightlight">&#60;private seed from step 1.&#62;</span>
+                                </div>
+                            </li>
+                            <li><span class="step">4.</span> Use <span class="code">--help</span> for additional
+                                configuration and flags</li>
+                        </ul>
+                    </div>
+
+                    <div class="tile column is-half is-vertical">
+                        <h3 class="subtitle is-4">Vedran Daemon</h3>
+                        <div class="pb-20" style="margin-left: 0.5rem;">
+                            <span class="box is-size-6" style="width: 70%;">
+                                Vedran daemon is small daemon app that is running alongside your Substrate based node to join
+                                some of the <a href="#load-balancers">existing load balancer</a> pools and receive payments for operating node.
+                            </span>
+                        </div>
+                        <ul>
+                            <li><span class="step">1.</span> Run Substrate based node: <a
+                                    href="https://wiki.polkadot.network/docs/en/maintain-sync">wiki.polkadot.network</a>
+                            </li>
+                            <li><span class="step">2.</span> Download latest release: <a
+                                    href="https://github.com/NodeFactoryIo/vedran-daemon/releases">Github</a></li>
+                                    <li class="codeContainer">
+                                        <span class="step">3.</span>
+                                        <div class="code">
+                                            unzip vedran-daemon-linux-*.zip
+                                        </div>
+                                    </li>
+                            <li class="codeContainer">
+                                <span class="step">4.</span>
+                                <div class="code">
+                                    ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your
+                                        node&#62;</span> --lb=<span class="hightlight">&#60;load balancer
+                                        url&#62;</span>
+                                    --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="macContainer" class="content-tab" style="display: none">
             <div class="box">
-                <h1>Mac</h1>
-                <h3 class="subtitle is-5">Vedran Load Balancer</h3>
-                <ul>    
-                    <li><span class="step">1.</span> Download latest release from: <a target="_blank" href="https://github.com/NodeFactoryIo/vedran/releases" >Github</a></li>
-                    <li><span class="step">2.</span>Create polkadot account - <a target="_blank" href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network</a></li>
-                    <li class="codeContainer">
-                        <span class="step">3.</span>
-                        <div class="code">
-                            ./vedran start --auth-secret=<span class="hightlight">&#60;generate random secret&#62;</span>   --private-key=<span class="hightlight">&#60;private seed from generated account&#62;</span>
-                        </div> 
-                    </li>
-                    <li><span class="step">4.</span> Use <span class="code">--help</span> for additional configuration and flags</li>
-                </ul>
-                <h3 class="subtitle is-5">Vedran Daemon</h3>
-                <ul>
-                    <li><span class="step">1.</span> Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">Github</a></li>
-                    <li class="codeContainer">
-                        <span class="step">2.</span>
-                        <div class="code">
-                                ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your node&#62;</span> --lb=<span class="hightlight">&#60;load balancer url&#62;</span>
-                                --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                <div class="columns  pb-20">
+                    <div class="tile column is-half is-vertical">
+                        <h3 class="subtitle is-4">Vedran Load Balancer</h3>
+                        <div class="pb-20" style="margin-left: 0.5rem;">
+                            <span class="box is-size-6" style="width: 70%;">
+                                Vedran load balancer is providing public endpoint for end users,
+                                distributing request amongst available nodes and doing recurring
+                                payments to node operators based on various metrics and number of requests served.<br/><br/>
+                                Note: you will have to secure funding yourself either trough chain treasuries or other sources of funding
+                            </span>
                         </div>
-                    </li>
-                </ul>
+                        <ul>
+                            <li><span class="step">1.</span>Create polkadot account - <a target="_blank"
+                                    href="https://wiki.polkadot.network/docs/en/learn-account-generation">wiki.polkadot.network</a>
+                            </li>
+                            <li><span class="step">2.</span>Download latest release from: <a target="_blank"
+                                    href="https://github.com/NodeFactoryIo/vedran/releases">Github</a></li>
+                            <li><span class="step">3.</span>Unzip downloaded archive with your favorite tool</li>
+                            <li class="codeContainer">
+                                <span class="step">4.</span>
+                                <div class="code">
+                                    ./vedran start --auth-secret=<span class="hightlight">&#60;random secret&#62;</span>
+                                    --private-key=<span class="hightlight">&#60;private seed from step 1.&#62;</span>
+                                </div>
+                            </li>
+                            <li><span class="step">4.</span> Use <span class="code">--help</span> for additional
+                                configuration and flags</li>
+                        </ul>
+                    </div>
+
+                    <div class="tile column is-half is-vertical">
+                        <h3 class="subtitle is-4">Vedran Daemon</h3>
+                        <div class="pb-20" style="margin-left: 0.5rem;">
+                            <span class="box is-size-6" style="width: 70%;">
+                                Vedran daemon is small daemon app that is running alongside your Substrate based node to join
+                                some of the <a href="#load-balancers">existing load balancer</a> pools and receive payments for operating node.
+                            </span>
+                        </div>
+                        <ul>
+                            <li><span class="step">1.</span> Run Substrate based node: <a
+                                    href="https://wiki.polkadot.network/docs/en/maintain-sync">wiki.polkadot.network</a>
+                            </li>
+                            <li><span class="step">2.</span> Download latest release: <a
+                                    href="https://github.com/NodeFactoryIo/vedran-daemon/releases">Github</a></li>
+                            <li><span class="step">3.</span>Unzip downloaded archive with your favorite tool</li>
+                            <li class="codeContainer">
+                                <span class="step">4.</span>
+                                <div class="code">
+                                    ./vedran-daemon --id=<span class="hightlight">&#60;some secret id for your
+                                        node&#62;</span> --lb=<span class="hightlight">&#60;load balancer
+                                        url&#62;</span>
+                                    --payout-address=<span class="hightlight">&#60;polkadot account address&#62;</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-
-        <!-- <div class="box">
-            <h3 class="subtitle is-5">Node</h3>
-            <ul>
-                <li>Download latest release: <a href="https://github.com/NodeFactoryIo/vedran-daemon/releases">github.com/NodeFactoryIo/vedran-daemon/releases</a></li>
-                <li>
-                    ./vedran-daemon --id=&#60;some secret id for your node&#62; --lb=&#60;load balancer url&#62; </br>
-                    --payout-address=&#60;polkadot account address&#62;
-                </li>
-            </ul>
-        </div> -->
     </div>
 </section>

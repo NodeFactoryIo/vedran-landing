@@ -43,7 +43,6 @@ export function initModals() {
   if (typeof targets != "undefined" && targets != null) {
     for (var i = 0, len = targets.length; i < len; i++) {
       targets[i].addEventListener("click", function (event) {
-        console.log("click modal");
         var modalID = this.getAttribute("data-modal");
         document.querySelector("#" + modalID).classList.add("is-active");
         const scrollY = document.documentElement.style.getPropertyValue(
@@ -63,7 +62,6 @@ export function initModals() {
   if (typeof targets != "undefined" && targets != null) {
     for (var i = 0, len = targets.length; i < len; i++) {
       targets[i].addEventListener("click", function (event) {
-        console.log("click modal close");
         const body = document.body;
         const scrollY = body.style.top;
         body.style.position = "";
@@ -71,7 +69,6 @@ export function initModals() {
         body.style.width = "";
         body.style.top = "";
         window.scrollTo(0, parseInt(scrollY || "0") * -1);
-        this.closest(".modal").classList.remove("is-active");
       });
     }
   }
